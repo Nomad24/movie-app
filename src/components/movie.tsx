@@ -1,27 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 interface MovieQueryProps {
-  query: any
+  query: any;
 }
 
-const Movie: React.FC<MovieQueryProps> = props => {
-  
-
-  if (props.query.length === 0) {
-    return <p><strong>Write something here</strong></p>;
-  }
-
+const Movie: React.FC<MovieQueryProps> = (props) => {
   return (
-    <div>
+    <div className="row">
       {props.query.map((movie: any) => {
         return (
-          <div className="col s6" key={movie.id}>
+          <div className="col s12" key={movie.id}>
             <h3>{movie.title}</h3>
-            <p>Release date: {movie.release_date}</p>
             <img
               src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
               alt="#"
             />
+            <p className="date">
+              Release date: {movie.release_date}
+              <br />
+              <br />
+              Rating: {movie.vote_average}
+            </p>
+            <br />
+            <div>
+              <p className="description">
+                <strong>Description: </strong>
+                <hr />
+                {movie.overview}
+              </p>
+            </div>
           </div>
         );
       })}

@@ -1,11 +1,10 @@
 import React, { useRef } from "react";
 
 interface MovieFormProps {
-  onSearch(title: string): void
+  onSearch(title: string): void;
 }
 
-const Form: React.FC<MovieFormProps> = props => {
-
+const Form: React.FC<MovieFormProps> = (props) => {
   const ref = useRef<HTMLInputElement>(null);
 
   const keyPressHandler = (event: React.KeyboardEvent) => {
@@ -19,7 +18,7 @@ const Form: React.FC<MovieFormProps> = props => {
 
   return (
     <div className="row">
-      <form className="col s12">
+      <form className="col s12 form-1">
         <div className="input-field">
           <input
             id="form"

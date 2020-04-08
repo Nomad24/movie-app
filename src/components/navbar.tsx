@@ -3,10 +3,12 @@ import { NavLink } from "react-router-dom";
 
 const Navbar: React.FC = () => (
   <nav>
-    <div className="nav-wrapper grey darken-1">
-      <a href="/" className="brand-logo">
-        Movie App
-      </a>
+    <div className="nav-wrapper grey darken-3">
+      <NavLink to="/">
+        <a href="/" className="brand-logo">
+          Movie App
+        </a>
+      </NavLink>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
         <li>
           <NavLink to="/about">About</NavLink>
