@@ -1,7 +1,7 @@
 import React from "react";
 
 interface MovieGenreProps {
-  onGenre(e: React.MouseEvent, genres: any): void;
+  onGenre(e: React.MouseEvent, genres: string): void;
 }
 
 const Genre: React.FC<MovieGenreProps> = (props): any => {
